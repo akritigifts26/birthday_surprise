@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #080808;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .box {
+            background: #151515;
+            padding: 35px;
+            border-radius: 18px;
+            width: 85%;
+            max-width: 400px;
+            box-shadow: 0 0 25px #333;
+        }
+
+        h1 {
+            color: #f5c6d6;
+        }
+
+        input {
+            padding: 12px;
+            width: 80%;
+            border: none;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #f5c6d6;
+            color: #111;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #surprise {
+            display: none;
+            margin-top: 25px;
+        }
+
+        p {
+            line-height: 1.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h1> A Little Surprise For You </h1>
+
+        <p>Enter the secret PIN to unlock your birthday surprise.</p>
+
+        <input type="password" id="pin" placeholder="Enter PIN">
+
+        <br>
+
+        <button onclick="checkPIN()">Unlock Surprise</button>
+
+        <div id="surprise">
+            <h1>Happy Birthday! 🎂</h1>
+
+            <p>
+                I hope your day is filled with happiness,
+                laughter and beautiful memories.
+            </p>
+
+            <h2>I Love You ❤️</h2>
+
+            <p>Made with love, just for you.</p>
+        </div>
+    </div>
+
+    <script>
+        function checkPIN() {
+            const correctPIN = "1430";
+            const enteredPIN = document.getElementById("pin").value;
+
+            if (enteredPIN === correctPIN) {
+                document.getElementById("surprise").style.display = "block";
+            } else {
+                alert("Wrong PIN! Try again.");
+            }
+        }
+    </script>
+
+</body>
+</html>
